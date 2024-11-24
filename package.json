@@ -1,0 +1,12 @@
+{
+  "name": "!node-backend-boilerplate",
+  "version": "1.0.0",
+  "description": "This repo is a boilerplate for a comprehensive Node backend.",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
