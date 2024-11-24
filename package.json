@@ -1,12 +1,39 @@
 {
-  "name": "!node-backend-boilerplate",
+  "name": "node-backend-boilerplate",
   "version": "1.0.0",
   "description": "This repo is a boilerplate for a comprehensive Node backend.",
   "main": "src/index.ts",
   "scripts": {
-    "dev": ""
+    "prepare": "husky install",
+    "build": "tsc",
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "start": "ts-node dist/index.js",
+    "lint": "eslint .",
+    "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json}'",
+    "test:style": "pnpm lint && pnpm format"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "node",
+    "boilerplate",
+    "error-handling",
+    "logging",
+    "backend",
+    "winston"
+  ],
+  "author": "SecretariatV",
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "eslint": "^9.15.0",
+    "globals": "^15.12.0",
+    "husky": "^9.1.7",
+    "prettier": "^3.3.3",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.15.0"
+  },
+  "dependencies": {
+    "express": "^4.21.1",
+    "ts-node": "^10.9.2"
+  }
 }

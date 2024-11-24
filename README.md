@@ -138,6 +138,15 @@ node-backend-boilerplate/
 
 This project uses **Husky** for Git hooks to enforce code quality ahd testing:
 
+```bash
+pnpm test:style
+```
+
+#### **Scripts**
+
+- `lint`: Runs ESLint
+- `format`: Runs Prettier
+
 ---
 
 ### **Configuration**
@@ -176,8 +185,9 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ### **Author**
 
-- **Name**: [Oliver Boucher]
-- **Email**: [oliver.b25.f@gmail.com]
+- **Name**: Oliver Boucher
+- **Email**: [Gmail](mailto:joshua.lee.f25@gmail.com)
+- **Portfolio**: [Portfolio]()
 - **GitHub**: [Github](https://github.com/secretariatv)
 - **Twitter**: [Twitter](https://x.com/ovb_corder)
 
