@@ -1,9 +1,9 @@
 import express, {NextFunction, Request, Response} from 'express';
 
-import {connectDB} from './config';
-import authRoutes from './routes/authRoutes';
+import {connectDB, swaggerDocs} from './config';
 import {errorHandler} from './middlewares';
 import {IError} from './types';
+import authRoutes from './routes/authRoutes';
 
 const app = express();
 
@@ -11,6 +11,8 @@ connectDB();
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+
+swaggerDocs(app);
 
 app.use('/api/v1/auth', authRoutes);
 

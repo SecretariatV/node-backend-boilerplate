@@ -68,6 +68,7 @@ A comprehensive and professional Node.js backend boilerplate designed for buildi
 - [x] **Error Handling**: Centralized error handling mechanism
 - [ ] **Testing Framework**: Vitest for reliable unit and integration testing
 - [ ] **Communicate with fe using session**: Implement session-based communication with `express-session`
+- [ ] **API Documentation**: Add Swagger UI
 
 ### **Enhancements**
 
