@@ -10,7 +10,9 @@
     "start": "ts-node dist/index.js",
     "lint": "eslint .",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json}'",
-    "test:style": "pnpm lint && pnpm format"
+    "test:style": "pnpm lint && pnpm format",
+    "test": "vitest --run",
+    "test:coverage": "vitest --coverage"
   },
   "keywords": [
     "node",
@@ -25,13 +27,16 @@
   "devDependencies": {
     "@eslint/js": "^9.15.0",
     "@types/express": "^5.0.0",
+    "@types/supertest": "^6.0.2",
     "eslint": "^9.15.0",
     "globals": "^15.12.0",
     "husky": "^9.1.7",
     "prettier": "^3.3.3",
+    "supertest": "^7.0.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.15.0",
+    "vitest": "^2.1.5",
     "winston": "^3.17.0"
   },
   "dependencies": {

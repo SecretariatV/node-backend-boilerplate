@@ -65,7 +65,7 @@ A comprehensive and professional Node.js backend boilerplate designed for buildi
 - [ ] **Google Authentication**: OAuth 2.0 integration
 - [ ] **Phone Code Authentication**: Twilio-based OTP verification
 - [x] **Logging**: Winston for error and activity tracking
-- [ ] **Error Handling**: Centralized error handling mechanism
+- [x] **Error Handling**: Centralized error handling mechanism
 - [ ] **Testing Framework**: Vitest for reliable unit and integration testing
 - [ ] **Communicate with fe using session**: Implement session-based communication with `express-session`
 
