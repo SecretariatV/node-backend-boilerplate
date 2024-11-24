@@ -1,47 +1,49 @@
-## **Node backend boilerplate**
+# **Node backend boilerplate**
 
 [![Node.js Version](https://img.shields.io/badge/Node.js-%3E=20.17.0-brightgreen)](https://nodejs.org/) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-### **Description**
+## **Description**
 
 A comprehensive and professional Node.js backend boilerplate designed for building scalable and maintainable applications. This boilerplate features Google Authentication, Phone Code Authentication, logging, testing, and Git hooks for ensuring high code quality.
 
 ---
 
-### **Table of Contents**
+## **Table of Contents**
 
 1. [Features](#features)
 2. [Tech Stack](#tech-stack)
-3. [Getting Started](#getting-started)
-4. [Project Structure](#project-structure)
-5. [Authentication Setup](#authentication-setup)
-6. [Code Quality Automation](#code-quality-automation)
-7. [Configuration](#configuration)
-8. [Scripts](#scripts)
-9. [Contributing](#contributing)
-10. [License](#license)
-11. [Author](#author)
+3. [To-Do List](#to-do-list)
+4. [Getting Started](#getting-started)
+5. [Project Structure](#project-structure)
+6. [Usage](#usage)
+7. [Code Quality Automation](#code-quality-automation)
+8. [Configuration](#configuration)
+9. [Testing](#testing)
+10. [Contributing](#contributing)
+11. [License](#license)
+12. [Author](#author)
 
 ---
 
-### **Features**
+## **Features**
 
 - 🌟 **Modern technologies**: Node.js, TypeScript, Express.js
 - 🔒 **Authentication**:
   - Google OAuth2 using Passport.js
   - Phone Code Authentication using Twilio
 - 📜 **Logging**: Integrated with Winston for structured loggin
-- 🛡️ **Security**: Helmet, CORS, and other security best practices
-- 🧪 **Testing**: Preconfigured with Jest for unit testing
+- 🛡️ **Security**: Helmet, CORS, and rate limiting for secure APIs
+- 🧪 **Testing**: Preconfigured with Vitest for unit and integration testing
 - 🚀 **Code Quality**:
   - **Husky** for Git hooks
   - **ESLint** and **Prettier** for linting and formatting
-- 📁 **Clean Folder Structure**: Scalable and maintainable
-- 🌐 **API Documentation**: Swagger UI integration
+- 📁 **Clean Folder Structure**: Scalable, modular, and maintainable folder structure
+- 🌐 **API Documentation**: Integrated Swagger UI for auto-generated, interactive API docs
+- ⚡ **Performance Optimization**: Follows best practices for fast API responses
 
 ---
 
-### **Tech Stack**
+## **Tech Stack**
 
 - **Node.js** (v20 or higher)
 - **Express.js**
@@ -49,22 +51,44 @@ A comprehensive and professional Node.js backend boilerplate designed for buildi
 - **MongoDB** (or any other DB of your choice)
 - **Passport.js** (Google Authentication)
 - **Twilio** (Phone Code Authentication)
-- **Jest** for testing
+- **Vitest** for testing
 - **Winston** for logging
 - **Husky** for Git hooks
 
 ---
 
-### **Getting Started**
+## **To-Do List**
 
-#### **Prerequisites**
+### **Core Features**
+
+- [x] **Environment Setup**: Centralized environment variable configuration
+- [ ] **Google Authentication**: OAuth 2.0 integration
+- [ ] **Phone Code Authentication**: Twilio-based OTP verification
+- [x] **Logging**: Winston for error and activity tracking
+- [ ] **Error Handling**: Centralized error handling mechanism
+- [ ] **Testing Framework**: Vitest for reliable unit and integration testing
+- [ ] **Communicate with fe using session**: Implement session-based communication with `express-session`
+
+### **Enhancements**
+
+- [ ] **Role-based Access Control**: RBAC for admin and user permissions
+- [ ] **API Rate Limiting**: Prevent abuse using `express-rate-limit`
+- [ ] **File Upload Support**: Enable file uploads with Multer
+- [ ] **Docker Support**: Containerize the application for deployment
+- [ ] **CI/CD Pipeline**: Automate testing and deployment with GitHub Actions
+
+---
+
+## **Getting Started**
+
+### **Prerequisites**
 
 1. Install [Node.js](https://nodejs.org/) (>= 20.0.0)
 2. Install [MongoDB](https://www.mongodb.com/) or configure your preferred database.
 3. Set up a Google OAuth2 application via [Google Cloud Console](https://console.cloud.google.com/).
 4. Create a Twilio account and configure the messaging service.
 
-#### **Installation**
+### **Installation**
 
 1. Clone the repository:
    ```
@@ -82,7 +106,7 @@ A comprehensive and professional Node.js backend boilerplate designed for buildi
      cp .env.example .env
      ```
 
-#### **Run the Application**
+### **Run the Application**
 
 - Development mode:
   ```bash
@@ -93,15 +117,9 @@ A comprehensive and professional Node.js backend boilerplate designed for buildi
   pnpm start
   ```
 
-#### **Run Tests**
-
-```bash
-pnpm test
-```
-
 ---
 
-### **Project Structure**
+## **Project Structure**
 
 ```plaintext
 node-backend-boilerplate/
@@ -117,24 +135,25 @@ node-backend-boilerplate/
 ├── ├── app.ts          # Express app setup
 ├── ├── server.ts       # Entry point
 ├── .env.example        # Example environment variables
-├── .eslintrc.json      # ESLint configuration
+├── .eslint.config.mjs  # ESLint configuration
 ├── .prettierrc         # Prettier configuration
 ├── package.json        # Project metadata and dependencies
+├── vitest.config.ts    # Vitest configuration
 ├── tsconfig.json       # TypeScript configuration
 ├── README.md           # Documentation
 ```
 
 ---
 
-### **Authentication Setup**
+## **Usage**
 
-#### **Google Authentication**
+### **Google Authentication**
 
-#### **Phone Code Authentication**
+### **Phone Code Authentication**
 
 ---
 
-### **Code Quality Automation**
+## **Code Quality Automation**
 
 This project uses **Husky** for Git hooks to enforce code quality ahd testing:
 
@@ -142,20 +161,36 @@ This project uses **Husky** for Git hooks to enforce code quality ahd testing:
 pnpm test:style
 ```
 
-#### **Scripts**
+### **Scripts**
 
 - `lint`: Runs ESLint
 - `format`: Runs Prettier
 
 ---
 
-### **Configuration**
+## **Configuration**
 
 Refer to `.env.example` for the full list of required environment variables.
 
 ---
 
-### **Contributing**
+## **Testing**
+
+- Run all tests:
+
+  ```bash
+  pnpm test
+  ```
+
+- Generate coverage report:
+
+  ```bash
+  pnpm test:coverage
+  ```
+
+---
+
+## **Contributing**
 
 Welcoome contributions! Please follow these steps:
 
