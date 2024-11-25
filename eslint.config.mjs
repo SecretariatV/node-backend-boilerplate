@@ -11,6 +11,8 @@ export default [
     files: ['**/*.{js,mjs,cjs,ts}'],
     rules: {
       'no-console': 'warn',
+      '@typescript-eslint/no-namespace': 'off',
+      '@typescript-eslint/no-empty-object-type': 'off',
     },
   },
 ];

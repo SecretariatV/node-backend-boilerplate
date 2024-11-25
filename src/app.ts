@@ -1,9 +1,20 @@
 import express, {NextFunction, Request, Response} from 'express';
+import cookieParser from 'cookie-parser';
+import session from 'express-session';
+import passport from 'passport';
+import cors from 'cors';
 
-import {connectDB, swaggerDocs} from './config';
-import {errorHandler} from './middlewares';
+import {connectDB, env, passportConfig, swaggerDocs} from './config';
+import {errorHandler, requestLogger} from './middlewares';
 import {IError} from './types';
 import authRoutes from './routes/authRoutes';
+
+const corsOption = {
+  origin: [env.frontendUrl || 'http://localhost:3000', env.backendUrl || 'http://localhost:5000'],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
 
 const app = express();
 
@@ -11,6 +22,23 @@ connectDB();
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use(cookieParser());
+app.use(cors(corsOption));
+
+app.use(
+  session({
+    secret: env.secret,
+    resave: false,
+    saveUninitialized: true,
+    cookie: {secure: process.env.NODE_ENV === 'production'},
+  }),
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+passportConfig();
+
+app.use(requestLogger);
 
 swaggerDocs(app);
 

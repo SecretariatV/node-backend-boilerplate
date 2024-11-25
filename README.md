@@ -15,7 +15,7 @@ A comprehensive and professional Node.js backend boilerplate designed for buildi
 3. [To-Do List](#to-do-list)
 4. [Getting Started](#getting-started)
 5. [Project Structure](#project-structure)
-6. [Usage](#usage)
+6. [Authentication Setup](#authentication-setup)
 7. [Code Quality Automation](#code-quality-automation)
 8. [Configuration](#configuration)
 9. [Testing](#testing)
@@ -146,11 +146,40 @@ node-backend-boilerplate/
 
 ---
 
-## **Usage**
+## **Authentication Setup**
 
 ### **Google Authentication**
 
+1. **Set Up Google OAuth2 application**
+
+- Go to the [Google Cloud Console](https://console.cloud.google.com/).
+- Create a new project and enable the "OAuth2.0 API".
+- Set up an OAuth consent screen and create credentials for a Web Application.
+- Add authorized redirect URIs (e.g., `http://localhost:5000/auth/google/callback`).
+
+2. **Environment Variables**
+   Update your `.env` file with the following variables:
+
+   ```plaintext
+   GOOGLE_CLIENT_ID=<Your Google Client ID>
+   GOOGLE_CLIENT_SECRET=<Your Google Client Secret>
+   GOOGLE_CALLBACK_URL=http://localhost:5000/auth/google/callback
+   ```
+
 ### **Phone Code Authentication**
+
+1. **Set Up Twilio Account**
+
+- Go to the [Twilio Console](https://www.twilio.com).
+- Create a Messaging Service and note the SID.
+
+2. **Environment Variables**
+   Update your `.env` file with the following variables:
+   ```plaintext
+   TWILIO_ACCOUNT_SID=<Your Twilio Account SID>
+   TWILIO_AUTH_TOKEN=<Your Twilio Auth Token>
+   TWILIO_PHONE_NUMBER=<Your Twilio Phone Number>
+   ```
 
 ---
 
