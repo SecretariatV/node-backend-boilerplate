@@ -7,6 +7,7 @@ import {env} from './env';
 import {logger} from './logger';
 import {IProfile, IUser} from '../types';
 import User from '../models/userModel';
+import {transporter} from '../services';
 
 declare global {
   namespace Express {
@@ -33,10 +34,23 @@ export const passportConfig = () => {
 
           profile.confirmToken = confirmToken;
           const user = await User.findOneOrCreatedFromGoogle(profile);
-          //   const backendUrl = env.backendUrl || 'http://localhost:5000';
+
+          const backendUrl = env.backendUrl || 'http://localhost:5000';
+
+          const verificationLink = `${backendUrl}/api/v1/auth/verify-email?token=${confirmToken}`;
+
+          await transporter.sendMail({
+            from: '"Your App" <noreply@example.com>',
+            to: email,
+            subject: 'Email Verification',
+            text: `Please click the following link to verify your email: ${verificationLink}`,
+            html: `<p>Please click the following link to verify your email:</p><a href="${verificationLink}">Verify Email</a>`,
+          });
+
+          logger.info(`New user created via google strategy: ${email}. Please verify.`);
 
           done(null, user);
-        } catch (error: unknown) {
+        } catch (error) {
           if (error instanceof Error) {
             logger.error(`Google OAuth failed: ${error.message}`);
           } else {

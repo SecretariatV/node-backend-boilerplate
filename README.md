@@ -30,6 +30,7 @@ A comprehensive and professional Node.js backend boilerplate designed for buildi
 - 🌟 **Modern technologies**: Node.js, TypeScript, Express.js
 - 🔒 **Authentication**:
   - Google OAuth2 using Passport.js
+  - Local Email Authentication with JWT and password hashing
   - Phone Code Authentication using Twilio
 - 📜 **Logging**: Integrated with Winston for structured loggin
 - 🛡️ **Security**: Helmet, CORS, and rate limiting for secure APIs
@@ -51,6 +52,7 @@ A comprehensive and professional Node.js backend boilerplate designed for buildi
 - **MongoDB** (or any other DB of your choice)
 - **Passport.js** (Google Authentication)
 - **Twilio** (Phone Code Authentication)
+- **Google SMTP** (Email Verification)
 - **Vitest** for testing
 - **Winston** for logging
 - **Husky** for Git hooks
@@ -62,7 +64,9 @@ A comprehensive and professional Node.js backend boilerplate designed for buildi
 ### **Core Features**
 
 - [x] **Environment Setup**: Centralized environment variable configuration
-- [ ] **Google Authentication**: OAuth 2.0 integration
+- [x] **Google Authentication**: OAuth 2.0 integration
+- [x] **Local Email Authentication**: JWT-based email and password login
+- [x] **Email Verification**: Google SMTL integration
 - [ ] **Phone Code Authentication**: Twilio-based OTP verification
 - [x] **Logging**: Winston for error and activity tracking
 - [x] **Error Handling**: Centralized error handling mechanism
@@ -77,6 +81,7 @@ A comprehensive and professional Node.js backend boilerplate designed for buildi
 - [ ] **File Upload Support**: Enable file uploads with Multer
 - [ ] **Docker Support**: Containerize the application for deployment
 - [ ] **CI/CD Pipeline**: Automate testing and deployment with GitHub Actions
+- [x] **Custom Middleware**: Add reusable middleware for authentication and error handling
 
 ---
 

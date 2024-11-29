@@ -14,6 +14,9 @@ const requiredEnvVariables = [
   'GOOGLE_CALLBACK_URL',
   'FRONTEND_URL',
   'BACKEND_URL',
+  'SMTP_HOST',
+  'SMTP_USER',
+  'SMTP_PASS',
 ];
 
 requiredEnvVariables.forEach((key) => {
@@ -32,4 +35,7 @@ export const env = {
   googleCallbackUrl: process.env.GOOGLE_CALLBACK_URL as string,
   frontendUrl: process.env.FRONTEND_URL as string,
   backendUrl: process.env.BACKEND_URL as string,
+  smtpHost: process.env.SMTP_HOST as string,
+  smtpUser: process.env.SMTP_USER as string,
+  smtpPass: process.env.SMTP_PASS as string,
 };

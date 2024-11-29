@@ -13,7 +13,6 @@ interface IUser extends Document {
   id: string;
   email: string;
   password: string;
-  confirmToken?: string;
   phoneNumber?: string;
   googleId?: string;
   role: number;

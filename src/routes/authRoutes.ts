@@ -1,7 +1,7 @@
 import {Router} from 'express';
 import passport from 'passport';
 
-import {register} from '../controllers/authController';
+import {register, veryEmail} from '../controllers/authController';
 import {env} from '../config';
 import {IUser} from '../types';
 
@@ -48,23 +48,41 @@ router.post('/register', register);
 
 /**
  * @swagger
- * /api/v1/auth/google:
+ * /api/v1/auth/verify-email:
  *   get:
- *     summary: Initiate Google OAuth authentication
- *     description: Redirects the user to Google for OAuth authentication. Upon success, the user is authenticated and returned to the app.
+ *     summary: Verify a user's email using a verification token
  *     tags: [Auth]
+ *     parameters:
+ *       - in: query
+ *         name: token
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: JWT token sent to the user's email for verification
  *     responses:
- *       302:
- *         description: Redirect to Google OAuth page
- *         headers:
- *           Location:
- *             description: URL to Google OAuth
+ *       200:
+ *         description: Email verified successfully. User can now log in.
+ *         content:
+ *           application/json:
  *             schema:
- *               type: string
- *               example: https://accounts.google.com/o/oauth2/auth
- *       500:
- *         description: Internal server error during authentication
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Email verified successfully. You can now log in."
+ *       400:
+ *         description: Invalid token or user not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Invalid token or user not found."
  */
+router.get('/verify-email', veryEmail);
+
 router.get('/google', (req, res, next) => {
   passport.authenticate('google', {scope: ['profile', 'email']})(req, res, next);
 });
@@ -77,7 +95,7 @@ router.get('/google/callback', (req, res, next) => {
     if (!user) {
       return res.redirect('/login');
     }
-    req.login(user, (err) => {
+    req.logIn(user, (err) => {
       if (err) {
         return next(err);
       }

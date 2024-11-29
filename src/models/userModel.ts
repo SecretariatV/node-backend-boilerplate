@@ -10,7 +10,6 @@ interface IUserModel extends Model<IUser> {
 const userSchema = new Schema<IUser>({
   email: {type: String, required: true, unique: true},
   password: {type: String},
-  confirmToken: {type: String},
   phoneNumber: {type: String},
   googleId: {type: String, unique: true, sparse: true},
   role: {type: Number, required: true, default: 1},
