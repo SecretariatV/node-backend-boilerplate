@@ -256,7 +256,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ### **Author**
 
 - **Name**: Oliver Boucher
-- **Email**: [Gmail](mailto:joshua.lee.f25@gmail.com)
+- **Email**: [Gmail](mailto:oliver.b25.f@gmail.com)
 - **Portfolio**: [Portfolio]()
 - **GitHub**: [Github](https://github.com/secretariatv)
 - **Twitter**: [Twitter](https://x.com/ovb_corder)
