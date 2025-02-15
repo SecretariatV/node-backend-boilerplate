@@ -259,6 +259,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - **Email**: [Gmail](mailto:oliver.b25.f@gmail.com)
 - **Portfolio**: [Portfolio]()
 - **GitHub**: [Github](https://github.com/secretariatv)
-- **Twitter**: [Twitter](https://x.com/ovb_corder)
 
 Feel free to reach out for any questions or feedback about this project!
